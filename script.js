@@ -1,11 +1,12 @@
 import { researchResources } from "./research-resources.js";
+import { computerScienceJournals } from "./computer-science-journals.js";
 
 const resourceContainer = document.getElementById("resource-container");
+const journalList = document.getElementById("journal-list");
 const searchInput = document.getElementById("search-input");
 const categoryButtons = document.querySelectorAll(".category-btn");
 
 let currentCategory = "All";
-
 
 function displayResources(resources) {
   resourceContainer.innerHTML = "";
@@ -65,6 +66,41 @@ function displayResources(resources) {
 }
 
 
+function displayJournals(journals) {
+  journalList.innerHTML = "";
+  journalList.classList.toggle("has-content", journals.length > 0);
+
+  journals.forEach((journal) => {
+    const card = document.createElement("article");
+
+    card.className = "journal-card";
+
+    card.innerHTML = `
+      <div class="journal-header">
+        <span class="resource-type">${journal.acronym}</span>
+        <h3>${journal.name}</h3>
+      </div>
+
+      <p class="resource-description">
+        ${journal.description}
+      </p>
+
+      <div class="resource-fields">
+        ${journal.fields.map((field) => `<span>${field}</span>`).join("")}
+      </div>
+
+      <div class="resource-actions">
+        <a href="${journal.website}" target="_blank" rel="noopener noreferrer">
+          Visit Journal →
+        </a>
+      </div>
+    `;
+
+    journalList.appendChild(card);
+  });
+}
+
+
 function filterResources() {
   const searchText = searchInput.value.toLowerCase().trim();
 
@@ -110,3 +146,4 @@ searchInput.addEventListener("input", filterResources);
 
 
 displayResources(researchResources);
+displayJournals(computerScienceJournals);

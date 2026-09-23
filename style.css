@@ -307,8 +307,7 @@ main > section > div > p:nth-of-type(2) {
   transform: translateY(-2px);
 }
 
-#resources,
-#authors {
+#resources {
   background: var(--paper-light);
 }
 
@@ -319,7 +318,6 @@ main > section > div > p:nth-of-type(2) {
 
 #resources > div:last-child,
 #journal-list,
-#author-list,
 #guide-list {
   margin-top: 42px;
   min-height: 145px;
@@ -331,7 +329,6 @@ main > section > div > p:nth-of-type(2) {
 
 #resources > div:last-child::before,
 #journal-list::before,
-#author-list::before,
 #guide-list::before {
   content: "Curated materials will appear here";
   color: var(--accent-dark);
@@ -339,7 +336,13 @@ main > section > div > p:nth-of-type(2) {
   font-size: 1.2rem;
 }
 
-#resource-container {
+#journal-list.has-content::before,
+#resource-container::before {
+  display: none;
+}
+
+#resource-container,
+#journal-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
@@ -349,17 +352,18 @@ main > section > div > p:nth-of-type(2) {
   background: transparent;
 }
 
-#resource-container::before {
-  display: none;
-}
-
-.resource-card {
+.resource-card,
+.journal-card {
   display: flex;
   min-height: 290px;
   flex-direction: column;
   padding: 24px;
   border: 1px solid var(--line);
   background: var(--paper-light);
+}
+
+.journal-card {
+  min-height: 245px;
 }
 
 .resource-type {
@@ -370,7 +374,8 @@ main > section > div > p:nth-of-type(2) {
   text-transform: uppercase;
 }
 
-.resource-card h3 {
+.resource-card h3,
+.journal-card h3 {
   margin-top: 7px;
   font-size: 1.65rem;
   line-height: 1.1;
@@ -480,7 +485,8 @@ footer > p {
     display: none;
   }
 
-  #resource-container {
+  #resource-container,
+  #journal-list {
     grid-template-columns: 1fr;
   }
 }
@@ -502,7 +508,6 @@ footer > p {
 
   #resources > div:last-child,
   #journal-list,
-  #author-list,
   #guide-list {
     padding: 22px;
   }
