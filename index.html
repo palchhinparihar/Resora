@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="A curated research resource platform for Computer Science students and researchers."
+    />
+    <title>Research Resources | Computer Science</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="/" aria-label="Research Resources Home">
+          Research Resources
+        </a>
+
+        <ul>
+          <li>
+            <a href="#resources">Resources</a>
+          </li>
+          <li>
+            <a href="#journals">Journals</a>
+          </li>
+          <li>
+            <a href="#authors">Authors</a>
+          </li>
+          <li>
+            <a href="#guides">Guides</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="hero">
+        <div>
+          <p>Computer Science Research</p>
+
+          <h1>
+            Find the right resources for your research.
+          </h1>
+
+          <p>
+            Explore research papers, journals, authors, datasets,
+            tools, and useful guides for Computer Science research.
+          </p>
+
+          <a href="#resources">Explore Resources</a>
+        </div>
+      </section>
+
+      <section id="resources">
+        <div>
+          <p>Explore</p>
+
+          <h2>Research Resources</h2>
+
+          <p>
+            Discover useful resources organized by research area
+            and purpose.
+          </p>
+
+          <div class="resource-controls">
+            <label class="search-label" for="search-input">Search resources</label>
+            <input
+              id="search-input"
+              type="search"
+              placeholder="Search by name, field, or purpose"
+              autocomplete="off"
+            />
+
+            <div class="category-list" aria-label="Filter by category">
+              <button class="category-btn active" type="button" data-category="All">All</button>
+              <button class="category-btn" type="button" data-category="Journals & Publishers">Journals & Publishers</button>
+              <button class="category-btn" type="button" data-category="Research Discovery">Research Discovery</button>
+              <button class="category-btn" type="button" data-category="Digital Libraries">Digital Libraries</button>
+              <button class="category-btn" type="button" data-category="Conferences & Societies">Conferences & Societies</button>
+              <button class="category-btn" type="button" data-category="Datasets & Research Software">Datasets & Research Software</button>
+              <button class="category-btn" type="button" data-category="Preprint Platforms">Preprint Platforms</button>
+              <button class="category-btn" type="button" data-category="Research Infrastructure & Metadata">Research Infrastructure & Metadata</button>
+              <button class="category-btn" type="button" data-category="Open-Access Directories">Open-Access Directories</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="resource-container">
+          <!-- Resource cards will be added with JavaScript -->
+        </div>
+      </section>
+
+      <section id="journals">
+        <div>
+          <p>Publications</p>
+
+          <h2>Computer Science Journals</h2>
+
+          <p>
+            Find journals and publication resources relevant to
+            Computer Science research.
+          </p>
+        </div>
+
+        <div id="journal-list">
+          <!-- Journal cards will be added with JavaScript -->
+        </div>
+      </section>
+
+      <section id="authors">
+        <div>
+          <p>Researchers</p>
+
+          <h2>Authors & Researchers</h2>
+
+          <p>
+            Explore notable researchers and their publications
+            across different areas of Computer Science.
+          </p>
+        </div>
+
+        <div id="author-list">
+          <!-- Author cards will be added with JavaScript -->
+        </div>
+      </section>
+
+      <section id="guides">
+        <div>
+          <p>Learn</p>
+
+          <h2>Research Guides</h2>
+
+          <p>
+            Simple guides to help students understand research,
+            find papers, choose journals, and get started with
+            academic publishing.
+          </p>
+        </div>
+
+        <div id="guide-list">
+          <!-- Guide cards will be added with JavaScript -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        &copy; 2026 Research Resources. Built for Computer Science
+        students and researchers.
+      </p>
+    </footer>
+    
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

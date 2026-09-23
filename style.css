@@ -1,0 +1,509 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap');
+
+:root {
+  --ink: #17252b;
+  --ink-soft: #415158;
+  --paper: #f5f1e8;
+  --paper-light: #fbfaf6;
+  --paper-deep: #e9e3d7;
+  --line: #d4cec1;
+  --accent: #b65f3d;
+  --accent-dark: #8f442d;
+  --max-width: 1180px;
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  line-height: 1.65;
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  opacity: 0.28;
+  background-image: radial-gradient(#bdb5a6 0.55px, transparent 0.55px);
+  background-size: 17px 17px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid var(--line);
+  background: rgba(245, 241, 232, 0.92);
+}
+
+nav,
+main > section > div,
+footer > p {
+  width: min(90%, var(--max-width));
+  margin: 0 auto;
+}
+
+nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+nav > a {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+nav > a::before {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin: 0 10px 2px 0;
+  content: "";
+  background: var(--accent);
+  transform: rotate(45deg);
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+nav li a {
+  position: relative;
+  color: var(--ink-soft);
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+nav li a::after {
+  position: absolute;
+  right: 0;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  content: "";
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+nav li a:hover,
+nav li a:focus-visible {
+  color: var(--accent-dark);
+}
+
+nav li a:hover::after,
+nav li a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+main > section {
+  padding: 88px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+main > section > div > p:first-child {
+  margin-bottom: 14px;
+  color: var(--accent-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  margin-bottom: 13px;
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.08;
+}
+
+main > section > div > p:nth-of-type(2) {
+  max-width: 650px;
+  color: var(--ink-soft);
+}
+
+.resource-controls {
+  margin-top: 30px;
+}
+
+.search-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+#search-input {
+  width: min(100%, 520px);
+  min-height: 48px;
+  padding: 0 15px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper);
+}
+
+#search-input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.category-btn {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  color: var(--ink-soft);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.category-btn:hover,
+.category-btn:focus-visible,
+.category-btn.active {
+  border-color: var(--ink);
+  color: var(--paper-light);
+  background: var(--ink);
+}
+
+#hero {
+  position: relative;
+  min-height: 610px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--paper-light);
+}
+
+#hero::before {
+  position: absolute;
+  top: 13%;
+  right: 7%;
+  width: min(29vw, 360px);
+  height: min(29vw, 360px);
+  border: 1px solid var(--line);
+  content: "";
+  transform: rotate(8deg);
+}
+
+#hero::after {
+  position: absolute;
+  top: 18%;
+  right: 11%;
+  width: min(23vw, 285px);
+  height: min(23vw, 285px);
+  border: 1px solid var(--accent);
+  content: "";
+  opacity: 0.7;
+  transform: rotate(-13deg);
+}
+
+#hero > div {
+  position: relative;
+  z-index: 1;
+}
+
+#hero > div::after {
+  position: absolute;
+  top: 20px;
+  right: -230px;
+  width: 150px;
+  height: 1px;
+  content: "";
+  background: var(--accent);
+  box-shadow: 0 10px 0 var(--line), 0 20px 0 var(--line);
+}
+
+#hero h1 {
+  max-width: 770px;
+  margin-bottom: 25px;
+  color: var(--ink);
+  font-size: clamp(3.2rem, 7vw, 6.6rem);
+  line-height: 0.98;
+}
+
+#hero h1::first-line {
+  color: var(--ink);
+}
+
+#hero > div > p:nth-of-type(2) {
+  max-width: 570px;
+  font-size: 1.05rem;
+}
+
+#hero > div > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: 32px;
+  padding: 0 21px;
+  color: var(--paper-light);
+  background: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+#hero > div > a::after {
+  margin-left: 18px;
+  content: "↗";
+  color: #e8a486;
+  font-size: 1.1rem;
+}
+
+#hero > div > a:hover,
+#hero > div > a:focus-visible {
+  background: var(--accent-dark);
+  transform: translateY(-2px);
+}
+
+#resources,
+#authors {
+  background: var(--paper-light);
+}
+
+#journals,
+#guides {
+  background: var(--paper-deep);
+}
+
+#resources > div:last-child,
+#journal-list,
+#author-list,
+#guide-list {
+  margin-top: 42px;
+  min-height: 145px;
+  padding: 28px;
+  border: 1px dashed var(--line);
+  color: var(--ink-soft);
+  background: rgba(251, 250, 246, 0.52);
+}
+
+#resources > div:last-child::before,
+#journal-list::before,
+#author-list::before,
+#guide-list::before {
+  content: "Curated materials will appear here";
+  color: var(--accent-dark);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+#resource-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+#resource-container::before {
+  display: none;
+}
+
+.resource-card {
+  display: flex;
+  min-height: 290px;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+}
+
+.resource-type {
+  color: var(--accent-dark);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.resource-card h3 {
+  margin-top: 7px;
+  font-size: 1.65rem;
+  line-height: 1.1;
+}
+
+.resource-description {
+  margin-top: 15px;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+}
+
+.resource-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.resource-fields span {
+  padding: 4px 7px;
+  color: var(--ink-soft);
+  background: var(--paper-deep);
+  font-size: 0.68rem;
+}
+
+.resource-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.resource-actions {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+}
+
+.resource-actions a {
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.resource-actions a:hover,
+.resource-actions a:focus-visible {
+  color: var(--ink);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  color: var(--ink-soft);
+}
+
+footer {
+  padding: 32px 0;
+  color: #cdd2ce;
+  background: var(--ink);
+}
+
+footer > p {
+  font-size: 0.78rem;
+}
+
+@media (max-width: 760px) {
+  nav {
+    min-height: 68px;
+  }
+
+  nav ul {
+    display: none;
+  }
+
+  main > section {
+    padding: 64px 0;
+  }
+
+  #hero {
+    min-height: 590px;
+  }
+
+  #hero::before {
+    top: auto;
+    right: -90px;
+    bottom: -50px;
+    width: 270px;
+    height: 270px;
+  }
+
+  #hero::after {
+    top: auto;
+    right: -62px;
+    bottom: -22px;
+    width: 215px;
+    height: 215px;
+  }
+
+  #hero h1 {
+    max-width: 560px;
+    font-size: clamp(3rem, 14vw, 5rem);
+  }
+
+  #hero > div::after {
+    display: none;
+  }
+
+  #resource-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  nav,
+  main > section > div,
+  footer > p {
+    width: 86%;
+  }
+
+  #hero {
+    min-height: 550px;
+  }
+
+  #hero h1 {
+    font-size: 3.25rem;
+  }
+
+  #resources > div:last-child,
+  #journal-list,
+  #author-list,
+  #guide-list {
+    padding: 22px;
+  }
+}
