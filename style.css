@@ -152,7 +152,7 @@ nav li a:focus-visible::after {
 
 main > section {
   position: relative;
-  padding: 112px 0;
+  padding: 112px 50px;
   border-bottom: 1px solid var(--line);
 }
 
