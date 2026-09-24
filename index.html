@@ -10,7 +10,7 @@
       name="description"
       content="A curated research resource directory for Computer Science students."
     />
-    <title>Research Resources | Computer Science</title>
+    <title>Resora | Find Your Way Into Research</title>
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -24,16 +24,16 @@
 
         <ul>
           <li>
-            <a href="#resources">Resources</a>
+            <a href="#areas">Start with a question</a>
           </li>
           <li>
-            <a href="#areas">Areas</a>
+            <a href="#guides">Learn the rhythm</a>
           </li>
           <li>
-            <a href="#journals">Journals</a>
+            <a href="#resources">Build your shelf</a>
           </li>
           <li>
-            <a href="#guides">Guides</a>
+            <a href="#journals">See the field</a>
           </li>
         </ul>
       </nav>
@@ -42,40 +42,83 @@
     <main>
       <section id="hero">
         <div>
-          <p>Computer Science Research</p>
+          <p class="eyebrow">A field guide for curious minds</p>
 
           <h1>
-            Find the right resources for your research.
+            Start anywhere.<br />
+            Go deeper.
           </h1>
 
           <p>
-            Explore trusted resources for finding papers, journals,
-            conferences, tools, and useful guidance for Computer Science research.
+            Research is less a straight line than a trail of better questions.
+            Resora helps you find your first foothold, follow the thread, and
+            gather the sources that move your work forward.
           </p>
 
-          <a href="#resources">Explore Resources</a>
+          <a href="#areas">Choose a direction <span aria-hidden="true">↘</span></a>
+        </div>
+
+        <div class="hero-note" aria-hidden="true">
+          <span>01</span>
+          <p>the beginning<br />of a research trail</p>
+        </div>
+      </section>
+
+      <section id="areas">
+        <div>
+          <p class="eyebrow">Chapter one / find your thread</p>
+
+          <h2>What keeps<br />pulling you back?</h2>
+
+          <p>
+            Pick a direction that feels alive. You do not need a perfect topic
+            yet. A good question usually begins as a persistent hunch.
+          </p>
+        </div>
+
+        <div class="area-list">
+          <a class="area-card" href="area.html?topic=artificial-intelligence"><span>01</span>Artificial Intelligence</a>
+          <a class="area-card" href="area.html?topic=machine-learning"><span>02</span>Machine Learning</a>
+          <a class="area-card" href="area.html?topic=computer-vision"><span>03</span>Computer Vision</a>
+          <a class="area-card" href="area.html?topic=cybersecurity"><span>04</span>Cybersecurity</a>
+          <a class="area-card" href="area.html?topic=data-science"><span>05</span>Data Science</a>
+          <a class="area-card" href="area.html?topic=software-engineering"><span>06</span>Software Engineering</a>
+          <a class="area-card" href="area.html?topic=web-technologies"><span>07</span>Web Technologies</a>
+          <a class="area-card" href="area.html?topic=human-computer-interaction"><span>08</span>Human-Computer Interaction</a>
+        </div>
+      </section>
+
+      <section id="guides">
+        <div>
+          <p class="eyebrow">Chapter two / learn the rhythm</p>
+
+          <h2>Turn a hunch<br />into a practice.</h2>
+
+          <p>
+            A few clear moves can make the unknown feel workable: ask better,
+            read with intention, test what you find, and share it honestly.
+          </p>
+        </div>
+
+        <div id="guide-list">
+          <!-- Guide cards will be added with JavaScript -->
         </div>
       </section>
 
       <section id="resources">
         <div>
-          <p>Explore</p>
+          <p class="eyebrow">Chapter three / gather your tools</p>
 
-          <h2>Research Resources</h2>
+          <h2>Build a shelf<br />you can trust.</h2>
 
           <p>
-            Discover useful resources organized by research area
-            and purpose.
+            Once the question has a shape, collect the places that help you
+            chase it: libraries, indexes, archives, datasets, and communities.
           </p>
 
           <div class="resource-controls">
-            <label class="search-label" for="search-input">Search resources</label>
-            <input
-              id="search-input"
-              type="search"
-              placeholder="Search by name, field, or purpose"
-              autocomplete="off"
-            />
+            <label class="search-label" for="search-input">Search the shelf</label>
+            <input id="search-input" type="search" placeholder="Search by name, field, or purpose" autocomplete="off" />
 
             <div class="category-list" aria-label="Filter by category">
               <button class="category-btn active" type="button" data-category="All">All</button>
@@ -95,62 +138,20 @@
         </div>
       </section>
 
-      <section id="areas">
-        <div>
-          <p>Focus</p>
-
-          <h2>Research Areas</h2>
-
-          <p>
-            Start with a research area to orient your reading,
-            tools, and next steps.
-          </p>
-        </div>
-
-        <div class="area-list">
-          <a class="area-card" href="#resources">Artificial Intelligence</a>
-          <a class="area-card" href="#resources">Machine Learning</a>
-          <a class="area-card" href="#resources">Computer Vision</a>
-          <a class="area-card" href="#resources">Cybersecurity</a>
-          <a class="area-card" href="#resources">Data Science</a>
-          <a class="area-card" href="#resources">Software Engineering</a>
-          <a class="area-card" href="#resources">Web Technologies</a>
-          <a class="area-card" href="#resources">Human-Computer Interaction</a>
-        </div>
-      </section>
-
       <section id="journals">
         <div>
-          <p>Publications</p>
+          <p class="eyebrow">Chapter four / see the field</p>
 
-          <h2>Computer Science Journals</h2>
+          <h2>Notice where<br />the conversation is.</h2>
 
           <p>
-            Find journals and publication resources relevant to
-            Computer Science research.
+            Journals are not just destinations. They are living maps of what a
+            community is asking, arguing about, and making next.
           </p>
         </div>
 
         <div id="journal-list">
           <!-- Journal cards will be added with JavaScript -->
-        </div>
-      </section>
-
-      <section id="guides">
-        <div>
-          <p>Learn</p>
-
-          <h2>Research Guides</h2>
-
-          <p>
-            Simple guides to help students understand research,
-            find papers, choose journals, and get started with
-            academic publishing.
-          </p>
-        </div>
-
-        <div id="guide-list">
-          <!-- Guide cards will be added with JavaScript -->
         </div>
       </section>
     </main>
