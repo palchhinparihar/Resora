@@ -5,6 +5,9 @@ const resourceContainer = document.getElementById("resource-container");
 const journalList = document.getElementById("journal-list");
 const searchInput = document.getElementById("search-input");
 const categoryButtons = document.querySelectorAll(".category-btn");
+const campusResources = researchResources.filter(
+  (resource) => resource.category !== "Research Infrastructure & Metadata"
+);
 
 let currentCategory = "All";
 
@@ -104,7 +107,7 @@ function displayJournals(journals) {
 function filterResources() {
   const searchText = searchInput.value.toLowerCase().trim();
 
-  const filteredResources = researchResources.filter((resource) => {
+  const filteredResources = campusResources.filter((resource) => {
     const matchesCategory =
       currentCategory === "All" ||
       resource.category === currentCategory;
@@ -145,5 +148,5 @@ categoryButtons.forEach((button) => {
 searchInput.addEventListener("input", filterResources);
 
 
-displayResources(researchResources);
+displayResources(campusResources);
 displayJournals(computerScienceJournals);

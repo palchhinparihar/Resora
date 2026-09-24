@@ -311,9 +311,38 @@ main > section > div > p:nth-of-type(2) {
   background: var(--paper-light);
 }
 
+#areas,
 #journals,
 #guides {
   background: var(--paper-deep);
+}
+
+.area-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 42px;
+}
+
+.area-card {
+  min-height: 106px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  background: var(--paper-light);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.15;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.area-card:hover,
+.area-card:focus-visible {
+  color: var(--paper-light);
+  background: var(--accent-dark);
+  transform: translateY(-3px);
 }
 
 #resources > div:last-child,
@@ -486,8 +515,15 @@ footer > p {
   }
 
   #resource-container,
-  #journal-list {
+  #journal-list,
+  .area-list {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 900px) {
+  .area-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
