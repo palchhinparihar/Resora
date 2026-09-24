@@ -33,19 +33,7 @@ body {
   background: var(--paper);
   font-family: var(--sans);
   line-height: 1.65;
-  background-image: radial-gradient(circle at 12% 18%, rgba(232, 179, 79, 0.13) 0 1px, transparent 1px), radial-gradient(circle at 85% 72%, rgba(85, 127, 103, 0.12) 0 1px, transparent 1px);
-  background-size: 22px 22px, 31px 31px;
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-  opacity: 0.34;
-  background-image: linear-gradient(115deg, rgba(113, 140, 104, 0.08) 1px, transparent 1px), linear-gradient(25deg, rgba(217, 107, 67, 0.05) 1px, transparent 1px);
-  background-size: 74px 74px, 108px 108px;
+  background-image: linear-gradient(145deg, rgba(255, 250, 240, 0.7), rgba(223, 233, 225, 0.42));
 }
 
 a {
@@ -152,7 +140,7 @@ nav li a:focus-visible::after {
 
 main > section {
   position: relative;
-  padding: 112px 50px;
+  padding: 86px 50px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -259,11 +247,12 @@ main > section > div > p:nth-of-type(2) {
 
 #hero {
   position: relative;
-  min-height: 680px;
+  min-height: 570px;
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--paper-light) 0%, #f8f0dc 64%, #e5eee4 100%);
+  background: linear-gradient(135deg, var(--paper-light) 0%, #f8f0dc 62%, #e5eee4 100%);
+  perspective: 1000px;
 }
 
 #hero::before {
@@ -294,6 +283,7 @@ main > section > div > p:nth-of-type(2) {
 #hero > div {
   position: relative;
   z-index: 1;
+  transform: translateZ(20px);
 }
 
 #hero > div::after {
@@ -367,6 +357,7 @@ main > section > div > p:nth-of-type(2) {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   margin-top: 42px;
+  perspective: 900px;
 }
 
 .area-card {
@@ -380,7 +371,9 @@ main > section > div > p:nth-of-type(2) {
   font-family: var(--serif);
   font-size: 1.15rem;
   line-height: 1.15;
-  box-shadow: 4px 4px 0 rgba(85, 127, 103, 0.18);
+  box-shadow: 0 8px 0 rgba(85, 127, 103, 0.14), 0 14px 24px rgba(23, 42, 43, 0.06);
+  transform: translateZ(0) rotateX(0deg);
+  transform-style: preserve-3d;
   transition: color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
 }
 
@@ -398,8 +391,8 @@ main > section > div > p:nth-of-type(2) {
 .area-card:focus-visible {
   color: var(--paper-light);
   background: var(--accent-dark);
-  box-shadow: 7px 7px 0 var(--signal);
-  transform: translate(-3px, -3px);
+  box-shadow: 0 12px 0 var(--signal), 0 18px 26px rgba(23, 42, 43, 0.14);
+  transform: translateY(-5px) rotateX(3deg) rotateY(-2deg);
 }
 
 .area-card:hover span,
@@ -443,6 +436,7 @@ main > section > div > p:nth-of-type(2) {
   padding: 0;
   border: 0;
   background: transparent;
+  perspective: 1100px;
 }
 
 .resource-card,
@@ -455,7 +449,9 @@ main > section > div > p:nth-of-type(2) {
   border: 1px solid var(--line);
   border-top: 4px solid var(--moss);
   background: rgba(251, 248, 240, 0.88);
-  box-shadow: 4px 4px 0 rgba(85, 127, 103, 0.14);
+  box-shadow: 0 8px 0 rgba(85, 127, 103, 0.12), 0 14px 26px rgba(23, 42, 43, 0.06);
+  transform: translateZ(0) rotateX(0deg);
+  transform-style: preserve-3d;
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
@@ -464,8 +460,8 @@ main > section > div > p:nth-of-type(2) {
 .guide-card:hover,
 .area-result:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow);
-  transform: translateY(-5px);
+  box-shadow: 0 12px 0 rgba(224, 95, 63, 0.3), var(--shadow);
+  transform: translateY(-6px) rotateX(2deg) rotateY(-1deg);
 }
 
 .resource-card::before,
@@ -713,6 +709,7 @@ footer {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
   margin-top: 28px;
+  perspective: 1000px;
 }
 
 .area-result {
@@ -723,7 +720,9 @@ footer {
   border: 1px solid var(--line);
   border-top: 4px solid var(--signal);
   background: rgba(251, 248, 240, 0.78);
-  box-shadow: 4px 4px 0 rgba(224, 95, 63, 0.1);
+  box-shadow: 0 8px 0 rgba(224, 95, 63, 0.12), 0 14px 24px rgba(23, 42, 43, 0.06);
+  transform: translateZ(0) rotateX(0deg);
+  transform-style: preserve-3d;
   transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
@@ -821,7 +820,7 @@ footer > p {
   }
 
   #hero {
-    min-height: 590px;
+    min-height: 520px;
   }
 
   .hero-note {
@@ -878,6 +877,17 @@ footer > p {
 
   .area-results {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .area-card,
+  .resource-card,
+  .journal-card,
+  .guide-card,
+  .area-result {
+    transform: none;
+    transition: none;
   }
 }
 
