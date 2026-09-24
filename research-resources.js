@@ -7,11 +7,10 @@ export const researchResources = [
     fields: ["Computer Science", "Engineering", "Technology"],
     access: "Mixed",
     openAccess: false,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "A digital research library providing access to IEEE journals, conference proceedings, standards, and other technical publications.",
-    useCases: [
+    bestFor: [
       "Find research papers",
       "Find conferences",
       "Explore IEEE journals",
@@ -28,11 +27,10 @@ export const researchResources = [
     fields: ["Computer Science", "Software Engineering", "AI", "Computing"],
     access: "Mixed",
     openAccess: false,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "A major digital library for computing research, including ACM journals, conference proceedings, magazines, and other publications.",
-    useCases: [
+    bestFor: [
       "Find computer science papers",
       "Find conferences",
       "Explore ACM journals",
@@ -54,11 +52,10 @@ export const researchResources = [
     ],
     access: "Mixed",
     openAccess: false,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "Springer Nature's research platform for journals, books, reference works, and other scholarly publications.",
-    useCases: [
+    bestFor: [
       "Find research papers",
       "Find journals",
       "Explore books",
@@ -80,11 +77,10 @@ export const researchResources = [
     ],
     access: "Mixed",
     openAccess: false,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "Elsevier's platform for discovering peer-reviewed research articles, journals, books, and other scholarly content.",
-    useCases: [
+    bestFor: [
       "Find research papers",
       "Find journals",
       "Compare journals",
@@ -108,11 +104,10 @@ export const researchResources = [
     ],
     access: "Free",
     openAccess: true,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "An open-access archive for sharing and discovering scholarly preprints across multiple research disciplines.",
-    useCases: [
+    bestFor: [
       "Share preprints",
       "Discover recent research",
       "Find research before formal publication"
@@ -128,11 +123,10 @@ export const researchResources = [
     fields: ["Computer Science", "All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: true, code: true, citations: true },
     description:
       "An open research repository for sharing and preserving research papers, datasets, software, and other research artifacts.",
-    useCases: [
+    bestFor: [
       "Share research",
       "Publish datasets",
       "Publish software",
@@ -150,11 +144,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: false,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "A broad scholarly search service for discovering articles, theses, books, authors, citations, and other academic literature.",
-    useCases: [
+    bestFor: [
       "Find research papers",
       "Find related research",
       "Track citations",
@@ -172,11 +165,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: false,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "A free AI-powered research discovery tool that helps researchers search, understand, and connect scientific literature.",
-    useCases: [
+    bestFor: [
       "Discover research",
       "Find related papers",
       "Explore citations",
@@ -193,11 +185,10 @@ export const researchResources = [
     fields: ["Computer Science"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "An open bibliographic database focused specifically on computer science journals, conference proceedings, authors, and publications.",
-    useCases: [
+    bestFor: [
       "Find computer science papers",
       "Find conferences",
       "Explore authors",
@@ -214,11 +205,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "An open catalog of the global scholarly research system providing reusable metadata about works, authors, institutions, venues, and concepts.",
-    useCases: [
+    bestFor: [
       "Research discovery",
       "Analyze scholarly metadata",
       "Build research applications",
@@ -235,11 +225,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "Scholarly infrastructure that connects research outputs through persistent identifiers, metadata, and citation relationships.",
-    useCases: [
+    bestFor: [
       "Find DOI records",
       "Verify publication metadata",
       "Retrieve scholarly metadata",
@@ -256,11 +245,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "A persistent researcher identifier and profile system that helps connect researchers with their publications, affiliations, and other research contributions.",
-    useCases: [
+    bestFor: [
       "Create researcher identity",
       "Connect publications",
       "Maintain research profile",
@@ -277,11 +265,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "An index of quality, peer-reviewed open-access journals and articles from around the world.",
-    useCases: [
+    bestFor: [
       "Find open-access journals",
       "Find open-access articles",
       "Check journal indexing",
@@ -298,11 +285,10 @@ export const researchResources = [
     fields: ["All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: true, code: true, citations: true },
     description:
       "An open scholarly infrastructure service that aggregates research outputs from repositories and journals and provides access to open research content.",
-    useCases: [
+    bestFor: [
       "Find open-access papers",
       "Search repository content",
       "Discover research",
@@ -319,11 +305,10 @@ export const researchResources = [
     fields: ["Computer Science", "Machine Learning", "Artificial Intelligence"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: true, code: true, citations: true },
     description:
       "A free platform connecting machine learning papers with code, datasets, benchmarks, and reproducible implementations.",
-    useCases: [
+    bestFor: [
       "Find machine learning papers",
       "Compare benchmarks",
       "Find research code",
@@ -340,11 +325,10 @@ export const researchResources = [
     fields: ["Computer Science", "Natural Language Processing", "Artificial Intelligence"],
     access: "Free",
     openAccess: true,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "The digital archive of research in computational linguistics and natural language processing, including conference and journal publications.",
-    useCases: [
+    bestFor: [
       "Find NLP papers",
       "Explore conference proceedings",
       "Track research topics",
@@ -361,11 +345,10 @@ export const researchResources = [
     fields: ["Computer Science", "Systems", "Security", "Networking"],
     access: "Free",
     openAccess: true,
-    publishing: true,
-    discovery: true,
+    capabilities: { discovery: true, publishing: true, datasets: false, code: false, citations: true },
     description:
       "A community and publication platform for advanced computing research, with conferences, proceedings, technical reports, and professional resources.",
-    useCases: [
+    bestFor: [
       "Find systems conferences",
       "Read security papers",
       "Explore proceedings",
@@ -382,11 +365,10 @@ export const researchResources = [
     fields: ["Computer Science", "Data Science", "All Disciplines"],
     access: "Free",
     openAccess: true,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: true, code: true, citations: true },
     description:
       "A repository for publishing, sharing, and discovering datasets, figures, software, and other research outputs with persistent citations.",
-    useCases: [
+    bestFor: [
       "Share datasets",
       "Publish research software",
       "Find reusable data",
@@ -403,11 +385,10 @@ export const researchResources = [
     fields: ["Computer Science", "Software Engineering", "Data Science"],
     access: "Free / Paid",
     openAccess: false,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: true, citations: false },
     description:
       "A code hosting and collaboration platform widely used to share research software, experiments, documentation, and reproducible workflows.",
-    useCases: [
+    bestFor: [
       "Share research code",
       "Collaborate on projects",
       "Track experiments",
@@ -424,11 +405,10 @@ export const researchResources = [
     fields: ["Computer Science", "All Disciplines"],
     access: "Free",
     openAccess: false,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "A visual literature discovery tool that helps researchers explore related papers, authors, collections, and citation networks.",
-    useCases: [
+    bestFor: [
       "Explore related papers",
       "Map a research topic",
       "Discover authors",
@@ -445,11 +425,10 @@ export const researchResources = [
     fields: ["Computer Science", "All Disciplines"],
     access: "Free / Paid",
     openAccess: false,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "A visual tool for finding papers connected to a seed article through similarity and citation relationships.",
-    useCases: [
+    bestFor: [
       "Find foundational papers",
       "Discover related research",
       "Explore a field quickly",
@@ -466,11 +445,10 @@ export const researchResources = [
     fields: ["Computer Science", "Science", "Engineering", "All Disciplines"],
     access: "Institutional",
     openAccess: false,
-    publishing: false,
-    discovery: true,
+    capabilities: { discovery: true, publishing: false, datasets: false, code: false, citations: true },
     description:
       "An abstract and citation database for tracking scholarly literature, author profiles, research impact, and publication metrics.",
-    useCases: [
+    bestFor: [
       "Find research papers",
       "Track citations",
       "Analyze author impact",

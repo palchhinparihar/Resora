@@ -2,20 +2,34 @@ import { researchResources } from "./research-resources.js";
 import { computerScienceJournals } from "./computer-science-journals.js";
 import { researchGuides } from "./guides.js";
 
+// Cache the page elements used by rendering, filtering, and event handlers.
 const resourceContainer = document.getElementById("resource-container");
 const journalList = document.getElementById("journal-list");
 const guideList = document.getElementById("guide-list");
 const searchInput = document.getElementById("search-input");
 const categoryButtons = document.querySelectorAll(".category-btn");
-const campusResources = researchResources.filter(
-  (resource) => resource.category !== "Research Infrastructure & Metadata"
-);
+
+// Keep the full curated resource collection available to the page.
+const visibleResources = researchResources;
 
 let currentCategory = "All";
+
+// Resource rendering: shared markup helpers and the main resource card list.
+function createTags(items) {
+  return items.map((item) => `<span>${item}</span>`).join("");
+}
+
+function getCapabilityTerms(capabilities) {
+  return Object.entries(capabilities)
+    .filter(([, enabled]) => enabled)
+    .map(([capability]) => capability)
+    .join(" ");
+}
 
 function displayResources(resources) {
   resourceContainer.innerHTML = "";
 
+  // Show a clear state when the active search and category filters match nothing.
   if (resources.length === 0) {
     resourceContainer.innerHTML = `
       <p class="no-results">
@@ -45,9 +59,7 @@ function displayResources(resources) {
       </p>
 
       <div class="resource-fields">
-        ${resource.fields
-          .map((field) => `<span>${field}</span>`)
-          .join("")}
+        ${createTags(resource.fields)}
       </div>
 
       <div class="resource-info">
@@ -70,7 +82,7 @@ function displayResources(resources) {
   });
 }
 
-
+// Journal rendering: build the journal cards shown in the field section.
 function displayJournals(journals) {
   journalList.innerHTML = "";
   journalList.classList.toggle("has-content", journals.length > 0);
@@ -91,7 +103,7 @@ function displayJournals(journals) {
       </p>
 
       <div class="resource-fields">
-        ${journal.fields.map((field) => `<span>${field}</span>`).join("")}
+        ${createTags(journal.fields)}
       </div>
 
       <div class="resource-actions">
@@ -105,7 +117,7 @@ function displayJournals(journals) {
   });
 }
 
-
+// Guide rendering: build practical research guide cards.
 function displayGuides(guides) {
   guideList.innerHTML = "";
   guideList.classList.toggle("has-content", guides.length > 0);
@@ -126,7 +138,7 @@ function displayGuides(guides) {
       </p>
 
       <div class="resource-fields">
-        ${guide.topics.map((topic) => `<span>${topic}</span>`).join("")}
+        ${createTags(guide.topics)}
       </div>
 
       <div class="guide-info">
@@ -144,11 +156,12 @@ function displayGuides(guides) {
   });
 }
 
-
+// Filtering: apply the selected category and the free-text search together.
 function filterResources() {
+  // Normalize input so searches are case-insensitive and ignore extra spaces.
   const searchText = searchInput.value.toLowerCase().trim();
 
-  const filteredResources = campusResources.filter((resource) => {
+  const filteredResources = visibleResources.filter((resource) => {
     const matchesCategory =
       currentCategory === "All" ||
       resource.category === currentCategory;
@@ -159,7 +172,8 @@ function filterResources() {
       ${resource.type}
       ${resource.description}
       ${resource.fields.join(" ")}
-      ${resource.useCases.join(" ")}
+      ${resource.bestFor.join(" ")}
+      ${getCapabilityTerms(resource.capabilities)}
     `.toLowerCase();
 
     const matchesSearch = searchableText.includes(searchText);
@@ -170,7 +184,7 @@ function filterResources() {
   displayResources(filteredResources);
 }
 
-
+// Events: update active state and refresh the resource list when controls change.
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     categoryButtons.forEach((btn) => {
@@ -185,10 +199,9 @@ categoryButtons.forEach((button) => {
   });
 });
 
-
 searchInput.addEventListener("input", filterResources);
 
-
-displayResources(campusResources);
+// Initialization: render the complete page using the imported datasets.
+displayResources(visibleResources);
 displayJournals(computerScienceJournals);
 displayGuides(researchGuides);
