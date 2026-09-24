@@ -366,12 +366,14 @@ main > section > div > p:nth-of-type(2) {
 }
 
 #journal-list.has-content::before,
+#guide-list.has-content::before,
 #resource-container::before {
   display: none;
 }
 
 #resource-container,
-#journal-list {
+#journal-list,
+#guide-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
@@ -382,7 +384,8 @@ main > section > div > p:nth-of-type(2) {
 }
 
 .resource-card,
-.journal-card {
+.journal-card,
+.guide-card {
   display: flex;
   min-height: 290px;
   flex-direction: column;
@@ -395,6 +398,10 @@ main > section > div > p:nth-of-type(2) {
   min-height: 245px;
 }
 
+.guide-card {
+  min-height: 270px;
+}
+
 .resource-type {
   color: var(--accent-dark);
   font-size: 0.68rem;
@@ -404,7 +411,8 @@ main > section > div > p:nth-of-type(2) {
 }
 
 .resource-card h3,
-.journal-card h3 {
+.journal-card h3,
+.guide-card h3 {
   margin-top: 7px;
   font-size: 1.65rem;
   line-height: 1.1;
@@ -434,6 +442,13 @@ main > section > div > p:nth-of-type(2) {
   display: flex;
   justify-content: space-between;
   gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+}
+
+.guide-info {
   margin-top: auto;
   padding-top: 20px;
   color: var(--ink-soft);
@@ -516,6 +531,7 @@ footer > p {
 
   #resource-container,
   #journal-list,
+  #guide-list,
   .area-list {
     grid-template-columns: 1fr;
   }

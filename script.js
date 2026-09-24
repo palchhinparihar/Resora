@@ -1,8 +1,10 @@
 import { researchResources } from "./research-resources.js";
 import { computerScienceJournals } from "./computer-science-journals.js";
+import { researchGuides } from "./guides.js";
 
 const resourceContainer = document.getElementById("resource-container");
 const journalList = document.getElementById("journal-list");
+const guideList = document.getElementById("guide-list");
 const searchInput = document.getElementById("search-input");
 const categoryButtons = document.querySelectorAll(".category-btn");
 const campusResources = researchResources.filter(
@@ -104,6 +106,45 @@ function displayJournals(journals) {
 }
 
 
+function displayGuides(guides) {
+  guideList.innerHTML = "";
+  guideList.classList.toggle("has-content", guides.length > 0);
+
+  guides.forEach((guide) => {
+    const card = document.createElement("article");
+
+    card.className = "guide-card";
+
+    card.innerHTML = `
+      <div class="guide-header">
+        <span class="resource-type">${guide.type}</span>
+        <h3>${guide.title}</h3>
+      </div>
+
+      <p class="resource-description">
+        ${guide.description}
+      </p>
+
+      <div class="resource-fields">
+        ${guide.topics.map((topic) => `<span>${topic}</span>`).join("")}
+      </div>
+
+      <div class="guide-info">
+        <span>${guide.readTime}</span>
+      </div>
+
+      <div class="resource-actions">
+        <a href="${guide.website}" target="_blank" rel="noopener noreferrer">
+          Read Guide →
+        </a>
+      </div>
+    `;
+
+    guideList.appendChild(card);
+  });
+}
+
+
 function filterResources() {
   const searchText = searchInput.value.toLowerCase().trim();
 
@@ -150,3 +191,4 @@ searchInput.addEventListener("input", filterResources);
 
 displayResources(campusResources);
 displayJournals(computerScienceJournals);
+displayGuides(researchGuides);
