@@ -8,6 +8,8 @@ const journalList = document.getElementById("journal-list");
 const guideList = document.getElementById("guide-list");
 const searchInput = document.getElementById("search-input");
 const categoryButtons = document.querySelectorAll(".category-btn");
+const resourceCount = document.getElementById("resource-count");
+const clearFiltersButton = document.getElementById("clear-filters");
 
 // Keep the full curated resource collection available to the page.
 const visibleResources = researchResources;
@@ -28,13 +30,20 @@ function getCapabilityTerms(capabilities) {
 
 function displayResources(resources) {
   resourceContainer.innerHTML = "";
+  resourceCount.textContent = `Showing ${resources.length} of ${visibleResources.length} resources`;
 
   // Show a clear state when the active search and category filters match nothing.
   if (resources.length === 0) {
     resourceContainer.innerHTML = `
-      <p class="no-results">
-        No research resources found.
-      </p>
+      <div class="no-results">
+        <h3>Nothing matched your search.</h3>
+        <p>Try:</p>
+        <ul>
+          <li>a broader keyword</li>
+          <li>another research field</li>
+          <li>removing a category filter</li>
+        </ul>
+      </div>
     `;
 
     return;
@@ -200,6 +209,18 @@ categoryButtons.forEach((button) => {
 });
 
 searchInput.addEventListener("input", filterResources);
+
+clearFiltersButton.addEventListener("click", () => {
+  searchInput.value = "";
+  currentCategory = "All";
+
+  categoryButtons.forEach((button) => {
+    button.classList.toggle("active", button.dataset.category === "All");
+  });
+
+  filterResources();
+  searchInput.focus();
+});
 
 // Initialization: render the complete page using the imported datasets.
 displayResources(visibleResources);

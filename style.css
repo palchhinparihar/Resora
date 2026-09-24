@@ -224,6 +224,37 @@ main > section > div > p:nth-of-type(2) {
   margin-top: 16px;
 }
 
+.resource-filter-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+#resource-count {
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.clear-filters {
+  padding: 0;
+  border: 0;
+  color: var(--accent-dark);
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.clear-filters:hover,
+.clear-filters:focus-visible {
+  color: var(--ink);
+}
+
 .category-btn {
   padding: 8px 12px;
   border: 1px solid var(--line);
@@ -569,7 +600,21 @@ main > section > div > p:nth-of-type(2) {
 
 .no-results {
   grid-column: 1 / -1;
+  padding: 30px;
+  border: 1px dashed var(--line);
+  background: rgba(251, 248, 240, 0.72);
   color: var(--ink-soft);
+}
+
+.no-results h3 {
+  margin-bottom: 12px;
+  color: var(--ink);
+  font-size: 1.5rem;
+}
+
+.no-results ul {
+  margin-top: 4px;
+  padding-left: 20px;
 }
 
 footer {
