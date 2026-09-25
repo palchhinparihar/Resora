@@ -71,7 +71,7 @@ function renderResult(container, items, type, getTitle, getDescription, getTags,
       <h3>${getTitle(item)}</h3>
       <p>${getDescription(item)}</p>
       <div class="resource-fields">${getTags(item).slice(0, 3).map((tag) => `<span>${tag}</span>`).join("")}</div>
-      <a href="${getLink(item)}" target="_blank" rel="noopener noreferrer">Open this trail -></a>
+      <a href="${getLink(item)}" target="_blank" rel="noopener noreferrer">Open this trail <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
     </article>
   `).join("");
 }

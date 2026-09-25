@@ -11,6 +11,10 @@
       content="A curated research resource directory for Computer Science students."
     />
     <title>Resora | Find Your Way Into Research</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -18,16 +22,14 @@
   <body>
     <header>
       <nav>
-        <a href="/" aria-label="Research Resources Home">
-          Resora
-        </a>
+        <a href="/" aria-label="Research Resources Home">Resora</a>
 
         <ul>
           <li>
-            <a href="#areas">Start with a question</a>
+            <a href="#journey">The journey</a>
           </li>
           <li>
-            <a href="#guides">Learn the rhythm</a>
+            <a href="#areas">Research areas</a>
           </li>
           <li>
             <a href="#resources">Gather your tools</a>
@@ -45,27 +47,69 @@
           <p class="eyebrow">A field guide for curious minds</p>
 
           <h1>
-            Start anywhere.<br />
-            Go deeper.
+            Make room<br />
+            for a question.
           </h1>
 
           <p>
-            Find a first foothold, follow the thread, and build a research path
-            that feels like your own.
+            Resora is a small, welcoming research world for finding your way
+            into Computer Science. Follow a thread, gather your tools, and see
+            where it leads.
           </p>
 
-          <a href="#areas">Choose a direction <span aria-hidden="true">↘</span></a>
+          <div class="hero-actions">
+            <a href="#areas">Choose a direction <i class="fa-solid fa-arrow-down-right" aria-hidden="true"></i></a>
+            <a class="text-link" href="#journey">See how it works <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+          </div>
         </div>
 
         <div class="hero-note" aria-hidden="true">
-          <span>01</span>
-          <p>the beginning<br />of a research trail</p>
+          <span>FIELD NOTE / 01</span>
+          <p>There is no<br />wrong first step.</p>
+        </div>
+      </section>
+
+      <section id="journey" class="journey-section">
+        <div class="section-intro">
+          <p class="eyebrow">The Resora trail</p>
+          <h2>Research is a path,<br />not a locked door.</h2>
+          <p>
+            Move at your own pace. Start with a spark of curiosity, then let
+            each small step make the next one easier to see.
+          </p>
+        </div>
+
+        <div class="journey-path" aria-label="Four steps into research">
+          <article class="journey-step">
+            <span class="step-number">01</span>
+            <span class="step-marker" aria-hidden="true"><i class="fa-solid fa-compass"></i></span>
+            <h3>Choose a direction</h3>
+            <p>Find a field that gives your curiosity somewhere to land.</p>
+          </article>
+          <article class="journey-step">
+            <span class="step-number">02</span>
+            <span class="step-marker" aria-hidden="true"><i class="fa-solid fa-wave-square"></i></span>
+            <h3>Learn the rhythm</h3>
+            <p>Pick up the habits that turn a hunch into a real question.</p>
+          </article>
+          <article class="journey-step">
+            <span class="step-number">03</span>
+            <span class="step-marker" aria-hidden="true"><i class="fa-solid fa-toolbox"></i></span>
+            <h3>Gather your tools</h3>
+            <p>Build a shelf of sources, libraries, datasets, and communities.</p>
+          </article>
+          <article class="journey-step">
+            <span class="step-number">04</span>
+            <span class="step-marker" aria-hidden="true"><i class="fa-solid fa-binoculars"></i></span>
+            <h3>See the field</h3>
+            <p>Notice the conversations and people shaping the work.</p>
+          </article>
         </div>
       </section>
 
       <section id="areas">
-        <div>
-          <p class="eyebrow">Chapter one / find your thread</p>
+        <div class="section-intro">
+          <p class="eyebrow">01 / Find your thread</p>
 
           <h2>What keeps<br />pulling you back?</h2>
 
@@ -87,26 +131,9 @@
         </div>
       </section>
 
-      <section id="guides">
-        <div>
-          <p class="eyebrow">Chapter two / learn the rhythm</p>
-
-          <h2>Turn a hunch<br />into a practice.</h2>
-
-          <p>
-            Start with a few practical moves, then go deeper on the area that
-            catches your attention.
-          </p>
-        </div>
-
-        <div id="guide-list">
-          <!-- Guide cards will be added with JavaScript -->
-        </div>
-      </section>
-
       <section id="resources">
-        <div>
-          <p class="eyebrow">Chapter three / gather your tools</p>
+        <div class="section-intro">
+          <p class="eyebrow">02 / Gather your tools</p>
 
           <h2>Build a shelf<br />you can trust.</h2>
 
@@ -142,9 +169,26 @@
         </div>
       </section>
 
+      <section id="guides">
+        <div class="section-intro">
+          <p class="eyebrow">03 / Learn the rhythm</p>
+
+          <h2>Turn a hunch<br />into a practice.</h2>
+
+          <p>
+            Start with a few practical moves, then go deeper on the area that
+            catches your attention.
+          </p>
+        </div>
+
+        <div id="guide-list">
+          <!-- Guide cards will be added with JavaScript -->
+        </div>
+      </section>
+
       <section id="journals">
-        <div>
-          <p class="eyebrow">Chapter four / see the field</p>
+        <div class="section-intro">
+          <p class="eyebrow">04 / See the field</p>
 
           <h2>Notice where<br />the conversation is.</h2>
 
@@ -157,13 +201,41 @@
           <!-- Journal cards will be added with JavaScript -->
         </div>
       </section>
+
+      <section id="why-resora">
+        <div class="section-intro">
+          <p class="eyebrow">Why Resora?</p>
+          <h2>A calmer way<br />to begin.</h2>
+        </div>
+
+        <div class="why-grid">
+          <article>
+            <span class="why-mark" aria-hidden="true"><i class="fa-solid fa-filter-circle-dollar"></i></span>
+            <h3>Curated, not crowded</h3>
+            <p>Useful starting points, chosen to help you take the next step.</p>
+          </article>
+          <article>
+            <span class="why-mark" aria-hidden="true"><i class="fa-solid fa-hand-holding-heart"></i></span>
+            <h3>Friendly by design</h3>
+            <p>Research language made easier to approach without making it smaller.</p>
+          </article>
+          <article>
+            <span class="why-mark" aria-hidden="true"><i class="fa-solid fa-route"></i></span>
+            <h3>Yours to wander</h3>
+            <p>There is no single route. Follow what feels interesting today.</p>
+          </article>
+        </div>
+      </section>
     </main>
 
     <footer>
-      <p>
-        &copy; 2026 Resora. A research resource guide for Computer Science
-        students.
-      </p>
+      <div class="footer-inner">
+        <div>
+          <a class="footer-brand" href="/">Resora</a>
+          <p>A field guide for finding your way into Computer Science research.</p>
+        </div>
+        <p>&copy; 2026 Resora</p>
+      </div>
     </footer>
     
     <script type="module" src="script.js"></script>

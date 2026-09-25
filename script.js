@@ -55,6 +55,7 @@ function displayResources(resources) {
     card.className = "resource-card";
 
     card.innerHTML = `
+      <i class="fa-solid fa-sparkles card-mark" aria-hidden="true"></i>
       <div class="resource-header">
         <span class="resource-type">
           ${resource.type}
@@ -82,7 +83,7 @@ function displayResources(resources) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Visit Website →
+          Visit Website <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </a>
       </div>
     `;
@@ -102,6 +103,7 @@ function displayJournals(journals) {
     card.className = "journal-card";
 
     card.innerHTML = `
+      <i class="fa-solid fa-sparkles card-mark" aria-hidden="true"></i>
       <div class="journal-header">
         <span class="resource-type">${journal.acronym}</span>
         <h3>${journal.name}</h3>
@@ -117,7 +119,7 @@ function displayJournals(journals) {
 
       <div class="resource-actions">
         <a href="${journal.website}" target="_blank" rel="noopener noreferrer">
-          Visit Journal →
+          Visit Journal <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </a>
       </div>
     `;
@@ -137,6 +139,7 @@ function displayGuides(guides) {
     card.className = "guide-card";
 
     card.innerHTML = `
+      <i class="fa-solid fa-sparkles card-mark" aria-hidden="true"></i>
       <div class="guide-header">
         <span class="resource-type">${guide.type}</span>
         <h3>${guide.title}</h3>
@@ -156,7 +159,7 @@ function displayGuides(guides) {
 
       <div class="resource-actions">
         <a href="${guide.website}" target="_blank" rel="noopener noreferrer">
-          Read Guide →
+          Read Guide <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
         </a>
       </div>
     `;
