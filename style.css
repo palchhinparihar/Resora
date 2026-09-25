@@ -52,9 +52,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid var(--line);
-  background: rgba(255, 250, 240, 0.9);
-  box-shadow: 0 1px 0 rgba(23, 42, 43, 0.05), 0 8px 24px rgba(23, 42, 43, 0.04);
+  background: rgba(255, 250, 240, 0.82);
   backdrop-filter: blur(12px);
 }
 
@@ -66,76 +64,46 @@ footer > p {
 }
 
 nav {
-  min-height: 78px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
+  gap: 28px;
 }
 
 nav > a {
   color: var(--ink);
   font-family: var(--serif);
-  font-size: 1.35rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-nav > a::after {
-  margin-left: 9px;
-  color: var(--accent-dark);
-  content: "FIELD NOTES";
-  font-family: var(--sans);
-  font-size: 0.52rem;
-  letter-spacing: 0.15em;
-  vertical-align: middle;
-}
-
-nav > a::before {
-  display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin: 0 10px 2px 0;
-  content: "";
-  background: var(--accent);
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0;
 }
 
 nav ul {
   display: flex;
-  gap: 28px;
+  gap: 8px;
   list-style: none;
 }
 
 nav li a {
   position: relative;
+  display: block;
+  padding: 8px 12px;
+  border-radius: 999px;
   color: var(--ink-soft);
-  font-size: 0.83rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 500;
+  transition: color 180ms ease, background-color 180ms ease;
 }
 
 nav li a::after {
-  position: absolute;
-  right: 0;
-  bottom: -8px;
-  left: 0;
-  height: 2px;
-  content: "";
-  background: var(--accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 180ms ease;
+  display: none;
 }
 
 nav li a:hover,
 nav li a:focus-visible {
-  color: var(--accent-dark);
-}
-
-nav li a:hover::after,
-nav li a:focus-visible::after {
-  transform: scaleX(1);
+  color: var(--ink);
+  background: var(--paper-deep);
 }
 
 main > section {
