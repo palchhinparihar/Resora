@@ -352,35 +352,38 @@ main > section > div > p:nth-of-type(2) {
 }
 
 .area-list {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
   margin-top: 42px;
-  perspective: 900px;
+  border-top: 1px solid var(--line);
 }
 
 .area-card {
-  min-height: 130px;
+  position: relative;
+  min-height: 78px;
   display: flex;
-  align-items: flex-end;
-  padding: 18px;
-  border: 1px solid var(--line);
+  align-items: center;
+  gap: 24px;
+  padding: 17px 8px 17px 0;
+  border-bottom: 1px solid var(--line);
   color: var(--ink);
-  background: rgba(251, 248, 240, 0.72);
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  line-height: 1.15;
-  box-shadow: 0 8px 0 rgba(85, 127, 103, 0.14), 0 14px 24px rgba(23, 42, 43, 0.06);
-  transform: translateZ(0) rotateX(0deg);
-  transform-style: preserve-3d;
-  transition: color 180ms ease, background 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+  transition: color 180ms ease, padding 180ms ease, background 180ms ease;
 }
 
-.area-card span {
-  align-self: flex-start;
-  margin-bottom: auto;
+.area-card::before {
+  position: absolute;
+  left: -18px;
+  width: 3px;
+  height: 0;
+  content: "";
+  background: var(--accent);
+  transition: height 180ms ease;
+}
+
+.area-number {
+  width: 34px;
   color: var(--moss);
-  font-family: var(--sans);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -388,15 +391,41 @@ main > section > div > p:nth-of-type(2) {
 
 .area-card:hover,
 .area-card:focus-visible {
-  color: var(--paper-light);
-  background: var(--accent-dark);
-  box-shadow: 0 12px 0 var(--signal), 0 18px 26px rgba(23, 42, 43, 0.14);
-  transform: translateY(-5px) rotateX(3deg) rotateY(-2deg);
+  padding-left: 10px;
+  color: var(--accent-dark);
+  background: rgba(255, 250, 240, 0.5);
 }
 
-.area-card:hover span,
-.area-card:focus-visible span {
-  color: #f6d8cb;
+.area-card:hover::before,
+.area-card:focus-visible::before {
+  height: 42px;
+}
+
+.area-name {
+  flex: 1;
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.4vw, 2rem);
+  line-height: 1.1;
+}
+
+.area-action {
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.area-action i {
+  margin-left: 10px;
+  color: var(--accent);
+  transition: transform 180ms ease;
+}
+
+.area-card:hover .area-action i,
+.area-card:focus-visible .area-action i {
+  transform: translateX(4px);
 }
 
 #resources > div:last-child,
