@@ -901,6 +901,31 @@ footer {
   font-size: 0.78rem;
 }
 
+.area-footer-inner {
+  align-items: center;
+}
+
+.footer-nav {
+  width: auto;
+  min-height: 0;
+  margin: 0;
+}
+
+.footer-nav ul {
+  gap: 18px;
+}
+
+.footer-nav li a {
+  padding: 4px 0;
+  color: #cdd2ce;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:focus-visible {
+  color: var(--paper-light);
+  background: transparent;
+}
+
 footer > p {
   font-size: 0.78rem;
 }
