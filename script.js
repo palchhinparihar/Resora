@@ -133,13 +133,16 @@ function displayGuides(guides) {
   guideList.innerHTML = "";
   guideList.classList.toggle("has-content", guides.length > 0);
 
-  guides.forEach((guide) => {
+  guides.forEach((guide, index) => {
     const card = document.createElement("article");
 
     card.className = "guide-card";
 
     card.innerHTML = `
-      <i class="fa-solid fa-sparkles card-mark" aria-hidden="true"></i>
+      <div class="guide-marker">
+        <span class="guide-number">${String(index + 1).padStart(2, "0")}</span>
+        <span><i class="fa-solid fa-compass" aria-hidden="true"></i> Field note</span>
+      </div>
       <div class="guide-header">
         <span class="resource-type">${guide.type}</span>
         <h3>${guide.title}</h3>
@@ -154,7 +157,7 @@ function displayGuides(guides) {
       </div>
 
       <div class="guide-info">
-        <span>${guide.readTime}</span>
+        <span><i class="fa-regular fa-clock" aria-hidden="true"></i> ${guide.readTime}</span>
       </div>
 
       <div class="resource-actions">
