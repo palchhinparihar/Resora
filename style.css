@@ -86,6 +86,7 @@ nav {
 
 nav>a,
 .footer-brand {
+  flex-shrink: 0;
   color: var(--forest);
   font-family: var(--serif);
   font-size: 1.45rem;
@@ -105,6 +106,16 @@ nav ul,
   display: flex;
   gap: 5px;
   list-style: none;
+}
+
+nav ul {
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+nav ul::-webkit-scrollbar {
+  display: none;
 }
 
 nav li a,
@@ -181,6 +192,15 @@ h2 {
 .section-intro>p:last-child {
   max-width: 620px;
   color: var(--ink-soft);
+}
+
+.section-intro,
+.area-section,
+.resource-card,
+.journal-card,
+.guide-card,
+.area-result {
+  overflow-wrap: anywhere;
 }
 
 #hero {
@@ -322,9 +342,9 @@ h2 {
 
 .journey-path::before {
   position: absolute;
-  top: 16px;
+  top: 18px;
   right: 7%;
-  left: 7%;
+  left: 0.5%;
   height: 1px;
   content: "";
   background: var(--line-strong);
@@ -813,6 +833,31 @@ footer {
   background: transparent;
 }
 
+@media (max-width: 980px) {
+  nav {
+    gap: 16px;
+  }
+
+  nav li a {
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .journey-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 34px;
+  }
+
+  .journey-path::before {
+    display: none;
+  }
+
+  .area-content {
+    grid-template-columns: minmax(150px, .55fr) minmax(0, 2fr);
+    gap: 36px;
+  }
+}
+
 /* Area pages share the same field-guide language. */
 .area-page {
   min-height: 100vh;
@@ -1015,12 +1060,17 @@ footer {
 }
 
 @media (max-width: 760px) {
-  nav ul {
-    display: none;
-  }
-
   main>section {
     padding: 68px 0;
+  }
+
+  nav ul {
+    justify-content: flex-start;
+    max-width: calc(100% - 92px);
+  }
+
+  nav li {
+    flex: 0 0 auto;
   }
 
   #hero {
@@ -1066,6 +1116,7 @@ footer {
     left: 16px;
     width: 1px;
     height: auto;
+    display: block;
   }
 
   .journey-step {
@@ -1109,6 +1160,10 @@ footer {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .footer-nav ul {
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1117,6 +1172,16 @@ footer {
   main>section>div,
   footer>div {
     width: 86%;
+  }
+
+  nav ul {
+    max-width: calc(100% - 82px);
+  }
+
+  nav li a {
+    padding-right: 6px;
+    padding-left: 6px;
+    font-size: .74rem;
   }
 
   #hero {
@@ -1135,6 +1200,10 @@ footer {
     gap: 12px;
   }
 
+  .area-name {
+    min-width: 0;
+  }
+
   .area-action {
     font-size: 0;
   }
@@ -1150,6 +1219,12 @@ footer {
     gap: 8px;
   }
 
+  .resource-info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   .resource-card,
   .journal-card,
   .guide-card {
@@ -1158,6 +1233,10 @@ footer {
 
   .area-hero {
     padding: 72px 0 62px;
+  }
+
+  .area-hero h1 {
+    font-size: clamp(2.8rem, 15vw, 4.2rem);
   }
 }
 
