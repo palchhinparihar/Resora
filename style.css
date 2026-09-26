@@ -521,7 +521,48 @@ main > section > div > p:nth-of-type(2) {
 }
 
 .journal-card {
-  min-height: 245px;
+  min-height: 258px;
+  padding: 20px 21px 18px;
+  border-top: 2px solid var(--moss);
+  background: rgba(255, 250, 240, 0.72);
+  box-shadow: 3px 3px 0 rgba(85, 127, 103, 0.1);
+}
+
+.journal-card:hover {
+  box-shadow: 5px 5px 0 rgba(224, 95, 63, 0.14);
+}
+
+#journal-list .journal-card:nth-child(3n + 2) {
+  border-top-color: var(--signal);
+}
+
+#journal-list .journal-card:nth-child(3n + 3) {
+  border-top-color: var(--accent);
+}
+
+.journal-card .card-mark {
+  margin-bottom: 14px;
+  color: var(--moss);
+  font-size: 0.8rem;
+}
+
+.journal-card h3 {
+  max-width: 19ch;
+  font-size: 1.4rem;
+}
+
+.journal-card .resource-description {
+  margin-top: 13px;
+  font-size: 0.84rem;
+}
+
+.journal-card .resource-fields {
+  margin: 16px 0;
+}
+
+.journal-card .resource-actions {
+  margin-top: auto;
+  padding-top: 12px;
 }
 
 .guide-card {
